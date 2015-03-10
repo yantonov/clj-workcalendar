@@ -95,3 +95,41 @@
       5 10  :holiday
       6 12  :holiday
       11 4  :holiday)))
+
+(deftest calendar-2012-special-day-count
+  (is (= 24 (count (filter #(= 2012 (:year %))
+                           (source/get-work-calendar (ConsultantRuWorkCalendarSource.)))))))
+
+(deftest calendar-2012
+  (let [items (source/get-work-calendar (ConsultantRuWorkCalendarSource.))]
+    (are [m d type]
+      (= 1
+         (count (filter #(and
+                          (= (:year %) 2012)
+                          (= (:month %) m)
+                          (= (:day %) d)
+                          (= (:type %) type)
+                          )
+                        items)))
+      1 2   :holiday
+      1 3   :holiday
+      1 4   :holiday
+      1 5   :holiday
+      1 6   :holiday
+      2 23  :holiday
+      3 8   :holiday
+      3 9   :holiday
+      3 11  :workday
+      4 28  :workday
+      4 30  :holiday
+      5 1   :holiday
+      5 7   :holiday
+      5 8   :holiday
+      5 9   :holiday
+      5 12  :workday
+      6 9   :workday
+      6 11  :holiday
+      6 12  :holiday
+      11 5  :holiday
+      12 29 :workday
+      12 31 :holiday)))

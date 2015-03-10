@@ -55,4 +55,6 @@
             (get-work-calendar-for-year 2014
                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2014/")
             (get-work-calendar-for-year 2013
-                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2013/"))))
+                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2013/")
+            (get-work-calendar-for-year 2012
+                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2012/"))))
