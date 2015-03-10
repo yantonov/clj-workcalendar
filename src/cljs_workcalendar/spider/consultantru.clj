@@ -38,8 +38,8 @@
                (drop 7 (html/select calendar-element [:.days :span]))
                (apply concat (repeatedly #(range 1 8))))))
 
-(defn- get-work-calendar-for-year [year]
-  (let [rawPage (:body (http/get "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/"))
+(defn- get-work-calendar-for-year [year url]
+  (let [rawPage (:body (http/get url))
         page (html/html-resource (java.io.StringReader. rawPage))
         month-calendars (html/select page [:.month-block])]
     (apply concat (map (fn [calendar month-index]
@@ -50,4 +50,7 @@
 (extend-protocol source/WorkCalendarSource
   ConsultantRuWorkCalendarSource
   (get-work-calendar [this]
-    (get-work-calendar-for-year 2015)))
+    (concat (get-work-calendar-for-year 2015
+                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/")
+            (get-work-calendar-for-year 2014
+                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2014/"))))
