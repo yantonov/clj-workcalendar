@@ -64,5 +64,34 @@
       6 12  :holiday
       6 13  :holiday
       11 3  :holiday
-      11 4  :holiday
-)))
+      11 4  :holiday)))
+
+(deftest calendar-2013-special-day-count
+  (is (= 14 (count (filter #(= 2013 (:year %))
+                           (source/get-work-calendar (ConsultantRuWorkCalendarSource.)))))))
+
+(deftest calendar-2013
+  (let [items (source/get-work-calendar (ConsultantRuWorkCalendarSource.))]
+    (are [m d type]
+      (= 1
+         (count (filter #(and
+                          (= (:year %) 2013)
+                          (= (:month %) m)
+                          (= (:day %) d)
+                          (= (:type %) type)
+                          )
+                        items)))
+      1 1  :holiday
+      1 2  :holiday
+      1 3  :holiday
+      1 4  :holiday
+      1 7  :holiday
+      1 8  :holiday
+      3 8  :holiday
+      5 1  :holiday
+      5 2  :holiday
+      5 3  :holiday
+      5 9  :holiday
+      5 10  :holiday
+      6 12  :holiday
+      11 4  :holiday)))
