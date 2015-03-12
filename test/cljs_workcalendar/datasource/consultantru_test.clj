@@ -1,9 +1,9 @@
-(ns cljs-workcalendar.spider.consultantru-test
+(ns cljs-workcalendar.datasource.consultantru-test
   (:require [cljs-workcalendar.workdayitem])
   (:import  [cljs_workcalendar.workdayitem WorkDayItem])
-  (:require [cljs-workcalendar.spider.consultantru :as impl])
-  (:import  [cljs_workcalendar.spider.consultantru ConsultantRuWorkCalendarSource])
-  (:require [cljs-workcalendar.spider.workcalendarsource :as source])
+  (:require [cljs-workcalendar.datasource.consultantru :as impl])
+  (:import  [cljs_workcalendar.datasource.consultantru ConsultantRuWorkCalendarSource])
+  (:require [cljs-workcalendar.datasource.workcalendarsource :as source])
   (:require [clojure.test :refer :all]))
 
 (defn- special-days-for-year [year]

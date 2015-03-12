@@ -1,7 +1,7 @@
-(ns cljs-workcalendar.spider.consultantru
+(ns cljs-workcalendar.datasource.consultantru
   (:require [cljs-workcalendar.workdayitem])
   (:import  [cljs_workcalendar.workdayitem WorkDayItem])
-  (:require [cljs-workcalendar.spider.workcalendarsource :as source])
+  (:require [cljs-workcalendar.datasource.workcalendarsource :as source])
   (:require [net.cgrand.enlive-html :as html])
   (:require [clj-http.client :as http]))
 

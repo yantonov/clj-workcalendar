@@ -1,4 +1,4 @@
-(ns cljs-workcalendar.spider.workcalendarsource)
+(ns cljs-workcalendar.datasource.workcalendarsource)
 
 (defprotocol WorkCalendarSource
   (get-work-calendar [this]))
