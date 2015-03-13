@@ -7,7 +7,7 @@
   (:import [cljs_workcalendar.format.plaintextformatter PlainTextWorkCalendarFormatter])
   (:require [clojure.java.io :as io]))
 
-(defn main [args]
+(defn -main [& args]
   (let [source (ConsultantRuWorkCalendarSource.)
         fmt (PlainTextWorkCalendarFormatter.)]
     (with-open [writer (io/writer "work-calendar.txt")]
