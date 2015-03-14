@@ -1,4 +1,4 @@
-(ns src-cljs.hello.cljs)
+(ns src-cljs.cljs-workcalendar.hello)
 
 (enable-console-print!)
 
