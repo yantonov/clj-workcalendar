@@ -17,6 +17,5 @@
                         ;; (See the ClojureScript compiler documentation for details.)
                         :compiler {
                                    :output-to "deploy/javascripts/main.js"
-                                   :output-dir "deploy/javascripts"
                                    :optimizations :whitespace
                                    :pretty-print false}}]})
