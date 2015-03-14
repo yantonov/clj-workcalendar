@@ -6,7 +6,7 @@
   f/ICanFormatWorkCalendar
   (format-work-calendar [this work-calendar]
     (map (fn [item]
-           (format "%04d.%02d.%02d:%d\n"
+           (format "%04d.%02d.%02d:%d"
                    (:year item)
                    (:month item)
                    (:day item)

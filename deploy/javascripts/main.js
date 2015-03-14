@@ -32887,3 +32887,99 @@ goog.provide("src_cljs.hello.cljs");
 goog.require("cljs.core");
 cljs.core.enable_console_print_BANG_.call(null);
 cljs.core.println.call(null, "Hello world!");
+goog.provide("cljs_workcalendar.calendar_data");
+goog.require("cljs.core");
+cljs_workcalendar.calendar_data.work_calendar = cljs.core.PersistentVector.fromArray([new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 1, 2, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 1, 3, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 
+1, 4, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 1, 5, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 1, 6, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 1, 9, 
+new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 2, 23, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 3, 8, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 3, 9, new cljs.core.Keyword(null, 
+"holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 3, 11, new cljs.core.Keyword(null, "workday", "workday", -1677326912)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 4, 28, new cljs.core.Keyword(null, "workday", "workday", -1677326912)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 4, 30, new cljs.core.Keyword(null, 
+"holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 5, 1, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 5, 5, new cljs.core.Keyword(null, "workday", "workday", -1677326912)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 5, 7, new cljs.core.Keyword(null, "holiday", 
+"holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 5, 8, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 5, 9, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 5, 12, new cljs.core.Keyword(null, "workday", "workday", 
+-1677326912)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 6, 9, new cljs.core.Keyword(null, "workday", "workday", -1677326912)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 6, 11, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 6, 12, new cljs.core.Keyword(null, "holiday", "holiday", 
+148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 11, 5, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 12, 29, new cljs.core.Keyword(null, "workday", "workday", -1677326912)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2012, 12, 31, new cljs.core.Keyword(null, "holiday", "holiday", 
+148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 1, 1, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 1, 2, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 1, 3, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], 
+null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 1, 4, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 1, 7, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 1, 8, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), 
+new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 3, 8, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 5, 1, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 5, 2, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 
+4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 5, 3, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 5, 9, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 5, 10, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, 
+cljs.core.PersistentVector.EMPTY_NODE, [2013, 6, 12, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2013, 11, 4, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 1, 1, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, 
+[2014, 1, 2, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 1, 3, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 1, 6, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 
+1, 7, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 1, 8, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 3, 10, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 5, 1, 
+new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 5, 2, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 5, 9, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 6, 12, new cljs.core.Keyword(null, 
+"holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 6, 13, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 11, 3, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2014, 11, 4, new cljs.core.Keyword(null, "holiday", 
+"holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 1, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 2, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 5, new cljs.core.Keyword(null, "holiday", "holiday", 
+148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 6, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 7, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 8, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], 
+null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 1, 9, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 2, 23, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 3, 9, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), 
+new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 5, 1, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 5, 4, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 5, 11, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 
+4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 6, 12, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null), new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [2015, 11, 4, new cljs.core.Keyword(null, "holiday", "holiday", 148024903)], null)], true);
+goog.provide("cljs_workcalendar.api");
+goog.require("cljs.core");
+goog.require("cljs_workcalendar.calendar_data");
+cljs.core.enable_console_print_BANG_.call(null);
+cljs_workcalendar.api.createWorkCalendarService = function cljs_workcalendar$api$createWorkCalendarService() {
+  var m = cljs.core.apply.call(null, cljs.core.hash_map, cljs.core.mapcat.call(null, function(p__5086) {
+    var vec__5087 = p__5086;
+    var year = cljs.core.nth.call(null, vec__5087, 0, null);
+    var month = cljs.core.nth.call(null, vec__5087, 1, null);
+    var day = cljs.core.nth.call(null, vec__5087, 2, null);
+    var type = cljs.core.nth.call(null, vec__5087, 3, null);
+    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [year, month, day], null), type], null);
+  }, cljs_workcalendar.calendar_data.work_calendar));
+  return new cljs_workcalendar.api.WorkCalendar(m);
+};
+cljs_workcalendar.api.date2vec = function cljs_workcalendar$api$date2vec(date) {
+  return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [date.getFullYear(), date.getMonth() + 1, date.getDate()], null);
+};
+cljs_workcalendar.api.WorkCalendar = function(work_calendar_map) {
+  this.work_calendar_map = work_calendar_map;
+};
+cljs_workcalendar.api.WorkCalendar.prototype.is_workday = function(date) {
+  var self__ = this;
+  var this$ = this;
+  return cljs.core.not.call(null, this$.is_non_working_day(date));
+};
+cljs_workcalendar.api.WorkCalendar.prototype.is_non_working_day = function(date) {
+  var self__ = this;
+  var this$ = this;
+  var or__4072__auto__ = function() {
+    var and__4060__auto__ = this$.is_weekend(date);
+    if (cljs.core.truth_(and__4060__auto__)) {
+      return cljs.core.not.call(null, this$.is_special_working_day(date));
+    } else {
+      return and__4060__auto__;
+    }
+  }();
+  if (cljs.core.truth_(or__4072__auto__)) {
+    return or__4072__auto__;
+  } else {
+    var and__4060__auto__ = cljs.core.not.call(null, this$.is_weekend(date));
+    if (and__4060__auto__) {
+      return this$.is_holiday(date);
+    } else {
+      return and__4060__auto__;
+    }
+  }
+};
+cljs_workcalendar.api.WorkCalendar.prototype.is_weekend = function(date) {
+  var self__ = this;
+  var this$ = this;
+  var day = date.getDay();
+  return cljs.core._EQ_.call(null, day, 0) || cljs.core._EQ_.call(null, day, 6);
+};
+cljs_workcalendar.api.WorkCalendar.prototype.is_special_working_day = function(date) {
+  var self__ = this;
+  var this$ = this;
+  return cljs.core._EQ_.call(null, new cljs.core.Keyword(null, "workday", "workday", -1677326912), cljs.core.get.call(null, self__.work_calendar_map, cljs_workcalendar.api.date2vec.call(null, date), new cljs.core.Keyword(null, "not-found", "not-found", -629079980)));
+};
+cljs_workcalendar.api.WorkCalendar.prototype.is_holiday = function(date) {
+  var self__ = this;
+  var this$ = this;
+  return cljs.core._EQ_.call(null, new cljs.core.Keyword(null, "holiday", "holiday", 148024903), cljs.core.get.call(null, self__.work_calendar_map, cljs_workcalendar.api.date2vec.call(null, date), new cljs.core.Keyword(null, "not-found", "not-found", -629079980)));
+};
+cljs_workcalendar.api.WorkCalendar.cljs$lang$type = true;
+cljs_workcalendar.api.WorkCalendar.cljs$lang$ctorStr = "cljs-workcalendar.api/WorkCalendar";
+cljs_workcalendar.api.WorkCalendar.cljs$lang$ctorPrWriter = function(this__4659__auto__, writer__4660__auto__, opt__4661__auto__) {
+  return cljs.core._write.call(null, writer__4660__auto__, "cljs-workcalendar.api/WorkCalendar");
+};
+cljs_workcalendar.api.__GT_WorkCalendar = function cljs_workcalendar$api$__GT_WorkCalendar(work_calendar_map) {
+  return new cljs_workcalendar.api.WorkCalendar(work_calendar_map);
+};
