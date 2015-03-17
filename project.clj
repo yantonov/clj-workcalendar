@@ -10,12 +10,25 @@
   :main cljs-workcalendar.app
   :plugins [[lein-cljsbuild "1.0.5"]]
   :cljsbuild {
-              :builds [{
-                        ;; The path to the top-level ClojureScript source directory:
+              :builds {
+                       :production
+                       {
                         :source-paths ["src-cljs"]
-                        ;; The standard ClojureScript compiler options:
-                        ;; (See the ClojureScript compiler documentation for details.)
                         :compiler {
                                    :output-to "deploy/javascripts/main.js"
                                    :optimizations :whitespace
-                                   :pretty-print false}}]})
+                                   :pretty-print false}}
+                       :unittest
+                       {
+                        :source-paths ["src-cljs" "test-cljs"]
+                        :notify-command ["phantomjs"
+                                         "phantom/unit-test.js"
+                                         "phantom/unit-test.html"]
+                        :compiler {
+                                   :output-to "target/testable.js"
+                                   :optimizations :whitespace
+                                   :pretty-print false}}}
+              :test-commands {"unit-tests"
+                              ["phantomjs"
+                               "phantom/unit-test.js"
+                               "phantom/unit-test.html"]}})
