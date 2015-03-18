@@ -1,6 +1,6 @@
 # cljs-workcalendar
 
-A Clojure tiny library designed to manipulate with work calendar from javascriptcode.
+A Clojure tiny library designed to simplify manupilations with dates (in the sense of [working calendar](http://www.superjob.ru/proizvodstvennyj_kalendar/)) from javascript code.
 
 ## Usage
 
