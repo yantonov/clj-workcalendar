@@ -26,7 +26,7 @@
           (inc (.getMonth date))
           (.getDate date)))
 
-(deftest is-move-to-workday-test
+(deftest move-to-workday-test
   (let [service (cs/createWorkCalendarService)]
     (are [year month day
           to-year to-month to-day]
@@ -39,5 +39,25 @@
       2012 1 15  2012 1 16 ; 1 day weekend
       2012 3 8   2012 3 11 ; to special workday
       )))
+
+(deftest move-to-workday-backwards-test
+  (let [service (cs/createWorkCalendarService)]
+    (are [year month day
+          to-year to-month to-day]
+      (= [to-year to-month to-day]
+         (date2vec (.move-to-workday-backwards service
+                                               (js/Date. year (dec month) day))))
+      2012 1  9  2011 12 30 ; new year holidays
+      2012 1  1  2011 12 30 ; 1 day holiday
+      2012 1 10  2012 1 10 ; workday - stay here
+      2012 1 15  2012 1 13 ; 2 day weekend weekend
+      2012 1 14  2012 1 13 ; 1 day weekend
+      2012 3 11  2012 3 11 ; special workday - stay here
+      2012 6 12  2012 6 9  ; to special workday
+      2012 6 11  2012 6 9  ; to special workday
+      2012 6 10  2012 6 9  ; to special workday
+      )))
+
+
 
 
