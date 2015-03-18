@@ -58,6 +58,20 @@
       2012 6 10  2012 6 9  ; to special workday
       )))
 
+(deftest add-days-test
+  (let [service (cs/createWorkCalendarService)]
+    (are [year month day
+          add-count
+          to-year to-month to-day]
+      (= [to-year to-month to-day]
+         (date2vec (.add-work-days service (js/Date. year (dec month) day) add-count)))
+      2012 1 10  1 2012 1 11
+      2012 1 11 -1 2012 1 10
+      2012 1 10  2 2012 1 12
+      2012 1 9   2 2012 1 12
+      2012 1  1  2 2012 1 12
+      2012 1 12  -3 2011 12 30)))
+
 
 
 

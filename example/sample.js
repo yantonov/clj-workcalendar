@@ -26,7 +26,7 @@ function sample() {
     console.log("next work day after 2012-01-01. expected: 2012-01-10, actual: " + service.move_to_workday(new Date(2012,1-1,1),false));
     console.log("previous work day after 2011-12-30. expected: 2012-01-10, actual: " + service.move_to_workday_backwards(new Date(2012,1-1,1),true));
 
-    console.log("add 2 work days to 2012-01-07. expected: 2012-01-12, actual: " + service.add_days(new Date(2012,1-1,7),2));
+    console.log("add 2 work days to 2012-01-07. expected: 2012-01-12, actual: " + service.add_work_days(new Date(2012,1-1,7),2));
 
     console.log("work days count between 2012-01-01 and 2012-01-15. expected 4, actual: " + service.work_day_count(new Date(2012,1-1,1),new Date(2012,1-1,15)));
 

@@ -1,8 +1,6 @@
 (ns cljs-workcalendar.api
   (:require [cljs-workcalendar.calendar-data :as data]))
 
-(enable-console-print!)
-
 (defn createWorkCalendarService []
   ;; create map from [y m d] -> day type (:holiday :workday)
   (let [m (apply hash-map
@@ -62,19 +60,17 @@
         d
         (recur (add-days d (if move-backwards -1 1))))))
 
-  (add-days [this date count]
+  (add-work-days [this date count]
     (if (or (zero? count)
             (nil? count))
       (throw (js/Error. "number of days is equal to zero"))
       (let [n (Math/abs count)
-            direction (if (> count 0) false true)]
-        (loop [i 0 d date]
-          (if (= i n)
-            d
-            (do
-              (println d)
-              (recur (inc i)
-                     (.get-nearest-workday this d direction))))))))
+            direction (if (> count 0) false true)
+            direction-int (if (> count 0) 1 -1)]
+        (first
+         (drop n
+               (filter (fn [d] (.is-workday this d))
+                       (iterate (fn [d] (add-days d direction-int)) date)))))))
 
   (work-day-count [this start-date end-date]
     (if (> (.getTime start-date)
