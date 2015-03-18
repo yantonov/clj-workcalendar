@@ -72,6 +72,19 @@
       2012 1  1  2 2012 1 12
       2012 1 12  -3 2011 12 30)))
 
-
-
-
+(deftest work-day-count-test
+  (let [service (cs/createWorkCalendarService)]
+    (are [from-year from-month from-day
+          to-year to-month to-day
+          expected-length]
+      (= expected-length (.work-day-count service
+                                          (js/Date. from-year
+                                                    (dec from-month)
+                                                    from-day)
+                                          (js/Date. to-year
+                                                    (dec to-month)
+                                                    to-day)))
+      2012 1 1 2012 1 10 1
+      2012 1 1 2012 1 31 16
+      2012 5 1 2012 5 31 21
+      2012 6 1 2012 6 30 20)))
