@@ -55,10 +55,12 @@
     (.get-nearest-workday this date true))
 
   (get-nearest-workday [this date move-backwards]
-    (loop [d date]
-      (if (.is-workday this d)
-        d
-        (recur (add-days d (if move-backwards -1 1))))))
+
+    (let [direction (if move-backwards -1 1)]
+      (first
+       (filter (fn [d]
+                 (.is-workday this d))
+               (iterate (fn [d] (add-days d direction)) date)))))
 
   (add-work-days [this date count]
     (if (or (zero? count)
