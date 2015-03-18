@@ -6,7 +6,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [clj-http "1.0.1"]
                  [enlive "1.1.5"]
-                 [org.clojure/clojurescript "0.0-3058"]]
+                 [org.clojure/clojurescript "0.0-3123"]]
   :main cljs-workcalendar.app
   :plugins [[lein-cljsbuild "1.0.5"]]
   :cljsbuild {
