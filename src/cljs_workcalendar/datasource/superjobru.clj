@@ -6,12 +6,12 @@
   (:require [clj-http.client :as http]))
 
 (defn- prev-month-day? [html-element]
-  (= (:class (:attrs html-element)) "pk_other"))
+  (.contains (:class (:attrs html-element)) "_other"))
 
 (defn- weekend? [html-element]
   (let [c (:class (:attrs html-element))]
     (and (not (nil? c))
-         (.contains c "pk_holiday"))))
+         (.contains c "_holiday"))))
 
 (defn- day [html-element]
   (Integer/parseInt (first (:content html-element))))
@@ -35,13 +35,13 @@
 
                    true
                    nil))
-               (html/select calendar-element [:.pk_cells :div])
+               (html/select calendar-element [:.ProductionCalendar_cells :div])
                (apply concat (repeatedly #(range 1 8))))))
 
 (defn- get-work-calendar-for-year [year url]
   (let [rawPage (:body (http/get url))
         page (html/html-resource (java.io.StringReader. rawPage))
-        month-calendars (html/select page [:.pk_container])]
+        month-calendars (html/select page [:.ProductionCalendar_grid])]
     (apply concat (map (fn [calendar month-index]
                          (extract-non-working-days calendar year month-index))
                        month-calendars
