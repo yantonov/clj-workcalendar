@@ -3,10 +3,10 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [clj-http "1.1.0"]
-                 [enlive "1.1.5"]
-                 [org.clojure/clojurescript "0.0-3178"]]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [clj-http "2.0.0"]
+                 [enlive "1.1.6"]
+                 [org.clojure/clojurescript "0.0-3308"]]
   :main cljs-workcalendar.app
   :plugins [[lein-cljsbuild "1.0.5"]]
   :cljsbuild {
