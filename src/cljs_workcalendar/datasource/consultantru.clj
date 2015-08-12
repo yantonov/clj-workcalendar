@@ -14,7 +14,7 @@
   (= (:class (:attrs html-element)) "weekend"))
 
 (defn- day [html-element]
-  (Integer/parseInt (first (:content html-element))))
+  (Integer/parseInt (.trim (first (:content html-element)))))
 
 (defn- extract-non-working-days [calendar-element year month]
   (filter #(not (nil? %))
