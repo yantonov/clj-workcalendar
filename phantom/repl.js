@@ -1,10 +1,13 @@
-if (phantom.args.length != o    console.log('Expected a target URL parameter.');
+var page = require('webpage').create();
+var system = require('system');
+var args = system.args;
+var page_opened = false;
+var url = args[1];
+
+if (args.length < 2) {
+    console.log('Expected a target URL parameter.');
     phantom.exit(1);
 }
-
-var page = require('webpage').create();
-var url = phantom.args[0];
-var page_opened = false;
 
 page.onConsoleMessage = function (message) {
     console.log("App console: " + message);
