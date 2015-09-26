@@ -55,8 +55,10 @@
 (extend-protocol source/WorkCalendarSource
   SuperjobRuWorkCalendarSource
   (get-work-calendar [this]
-    (concat (get-work-calendar-for-year 2015
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/")
+    (concat (get-work-calendar-for-year 2016
+                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2016/")
+     (get-work-calendar-for-year 2015
+                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2015/")
             (get-work-calendar-for-year 2014
                                         "http://www.superjob.ru/proizvodstvennyj_kalendar/2014/")
             (get-work-calendar-for-year 2013

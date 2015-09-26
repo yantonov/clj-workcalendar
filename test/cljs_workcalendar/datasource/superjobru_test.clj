@@ -15,6 +15,25 @@
                            (:type %))
                   (filter #(= (:year %) year) all-items)))))
 
+(deftest calendar-2016
+  (is (= [[1 1  :holiday]
+          [1 4  :holiday]
+          [1 5  :holiday]
+          [1 6  :holiday]
+          [1 7  :holiday]
+          [1 8  :holiday]
+          [2 20 :workday]
+          [2 22 :holiday]
+          [2 23 :holiday]
+          [3 7  :holiday]
+          [3 8  :holiday]
+          [5 2  :holiday]
+          [5 3  :holiday]
+          [5 9  :holiday]
+          [6 13 :holiday]
+          [11 4 :holiday]]
+         (special-days-for-year 2016))))
+
 (deftest calendar-2015
   (is (= [[1 1  :holiday]
           [1 2  :holiday]
