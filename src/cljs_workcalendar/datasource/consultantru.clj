@@ -39,7 +39,9 @@
                (apply concat (repeatedly #(range 1 8))))))
 
 (defn- get-work-calendar-for-year [year url]
-  (let [rawPage (:body (http/get url))
+  (let [rawPage (try
+                  (:body (http/get url))
+                  (catch Exception e ""))
         page (html/html-resource (java.io.StringReader. rawPage))
         month-calendars (html/select page [:.month-block])]
     (apply concat (map (fn [calendar month-index]
