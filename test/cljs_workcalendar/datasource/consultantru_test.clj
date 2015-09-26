@@ -8,12 +8,12 @@
 
 (defn- special-days-for-year [year]
   (let [all-items (source/get-work-calendar (ConsultantRuWorkCalendarSource.))]
-    (sort-by (fn [x] (+ (* 31 (get x 0))
-                        (get x 1)))
-             (map #(vector (:month %)
-                           (:day %)
-                           (:type %))
-                  (filter #(= (:year %) year) all-items)))))
+    (vec (sort-by (fn [x] (+ (* 31 (get x 0))
+                             (get x 1)))
+                  (map #(vector (:month %)
+                                (:day %)
+                                (:type %))
+                       (filter #(= (:year %) year) all-items))))))
 
 (deftest calendar-2015
   (is (= [[1 1  :holiday]
