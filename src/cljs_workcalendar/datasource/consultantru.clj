@@ -52,11 +52,13 @@
 (extend-protocol source/WorkCalendarSource
   ConsultantRuWorkCalendarSource
   (get-work-calendar [this]
-    (concat (get-work-calendar-for-year 2015
-                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/")
-            (get-work-calendar-for-year 2014
-                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2014/")
-            (get-work-calendar-for-year 2013
-                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2013/")
-            (get-work-calendar-for-year 2012
-                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2012/"))))
+                     (concat (get-work-calendar-for-year 2016
+                                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/")
+                             (get-work-calendar-for-year 2015
+                                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2015/")
+                             (get-work-calendar-for-year 2014
+                                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2014/")
+                             (get-work-calendar-for-year 2013
+                                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2013/")
+                             (get-work-calendar-for-year 2012
+                                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2012/"))))
