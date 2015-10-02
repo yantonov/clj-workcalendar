@@ -4,9 +4,9 @@ A Clojure tiny library designed to simplify manupilations with dates (in the sen
 
 ## Usage
 
-Grab work calendar data (and generate clojurescript file with work calendar).
+Grab work calendar data (and generate clojurescript data file with work calendar).
 ```bash
-bin/grab-data.sh
+bin/build-data-files.sh
 ```
 Generate javascript source from clojurescript sources.
 ```bash
@@ -14,9 +14,9 @@ bin/generate-js.sh
 ```
 
 ## CI
-Run unit tests (check collect work calendar data)
+Run unit tests (check collect work calendar data from external sites)
 ```bash
-bin/unit-test.sh
+bin/grab-data-integration-test.sh
 ```
 
 Run functional tests (check javascript api using [phantomjs](http://phantomjs.org/download.html)
