@@ -8,7 +8,7 @@
                  [enlive "1.1.6"]
                  [org.clojure/clojurescript "1.7.170"]]
   :main cljs-workcalendar.app
-  :plugins [[lein-cljsbuild "1.1.0"]]
+  :plugins [[lein-cljsbuild "1.1.1"]]
   :cljsbuild {
               :builds {
                        :production
