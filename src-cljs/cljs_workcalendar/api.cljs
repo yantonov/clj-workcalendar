@@ -1,14 +1,6 @@
 (ns cljs-workcalendar.api
   (:require [cljs-workcalendar.calendar-data :as data]))
 
-(defn createWorkCalendarService []
-  ;; create map from [y m d] -> day type (:holiday :workday)
-  (let [m (apply hash-map
-                 (mapcat (fn [[year month day type]]
-                           (vector [year month day] type))
-                         data/work-calendar))]
-    (WorkCalendar. m)))
-
 (defn- date2vec [date]
   (vector (.getFullYear date)
           (inc (.getMonth date))
@@ -85,3 +77,11 @@
                  (take-while (fn [d] (<= (.getTime d)
                                          to))
                              (iterate (fn [d] (add-days d 1)) from))))))))
+
+(defn createWorkCalendarService []
+  ;; create map from [y m d] -> day type (:holiday :workday)
+  (let [m (apply hash-map
+                 (mapcat (fn [[year month day type]]
+                           (vector [year month day] type))
+                         data/work-calendar))]
+    (WorkCalendar. m)))
