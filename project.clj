@@ -13,7 +13,7 @@
   :main cljs-workcalendar.app
 
   :plugins
-  [[lein-cljsbuild "1.1.1"]]
+  [[lein-cljsbuild "1.1.2"]]
 
   :cljsbuild
   {:builds
