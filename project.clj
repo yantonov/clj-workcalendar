@@ -8,7 +8,7 @@
   [[org.clojure/clojure "1.7.0"]
    [clj-http "2.0.0"]
    [enlive "1.1.6"]
-   [org.clojure/clojurescript "1.7.189"]]
+   [org.clojure/clojurescript "1.7.228"]]
 
   :main cljs-workcalendar.app
 
@@ -22,15 +22,17 @@
      :compiler
      {:output-to "target/work-calendar.js"
       :source-map "target/work-calendar.js.map"
-      :optimizations :whitespace
-      :pretty-print false}}
+      :optimizations :advanced
+      :pretty-print false
+      :parallel-build true}}
 
     :unittest
     {:source-paths ["src-cljs" "test-cljs"]
      :compiler
      {:output-to "target/testable-work-calendar.js"
       :optimizations :whitespace
-      :pretty-print false}
+      :pretty-print false
+      :parallel-build true}
      :notify-command ["phantomjs"
                       "phantom/unit-test.js"
                       "phantom/unit-test.html"]}}

@@ -16,7 +16,7 @@ function check_date(service,
 }
 
 function sample() {
-    var service = cljs_workcalendar.api.createWorkCalendarService();
+    var service = cljs_workcalendar.api;
 
     check_date(service, new Date(2012,1-1,3), false, false, true, false);
     check_date(service, new Date(2012,1-1,14), false, true, false, false);
