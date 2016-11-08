@@ -3,18 +3,12 @@
   (:import  [cljs_workcalendar.workdayitem WorkDayItem])
   (:require [cljs-workcalendar.datasource.consultantru :as impl])
   (:import  [cljs_workcalendar.datasource.consultantru ConsultantRuWorkCalendarSource])
-  (:require [cljs-workcalendar.datasource.workcalendarsource :as source])
   (:require [clojure.test :refer :all])
-  (:require [cljs-workcalendar.datasource.calendar-test-data :as test-data]))
+  (:require [cljs-workcalendar.datasource.calendar-test-data :as test-data])
+  (:require [cljs-workcalendar.datasource.source-test-util :as util]))
 
 (defn- special-days-for-year [year]
-  (let [all-items (source/get-work-calendar (ConsultantRuWorkCalendarSource.))]
-    (vec (sort-by (fn [x] (+ (* 31 (get x 0))
-                             (get x 1)))
-                  (map #(vector (:month %)
-                                (:day %)
-                                (:type %))
-                       (filter #(= (:year %) year) all-items))))))
+  (util/special-days-for-year year (ConsultantRuWorkCalendarSource.)))
 
 (deftest calendar-2016
   (is (= (test-data/calendar-2016)
