@@ -8,10 +8,10 @@
 (defrecord ConsultantRuWorkCalendarSource [])
 
 (defn- day-placeholder? [html-element]
-  (= (:class (:attrs html-element)) "disabled"))
+  (.contains (:class (:attrs html-element)) "inactively"))
 
 (defn- weekend? [html-element]
-  (= (:class (:attrs html-element)) "weekend"))
+  (.contains (:class (:attrs html-element)) "weekend"))
 
 (defn- day [html-element]
   (Integer/parseInt (.trim (first (:content html-element)))))
@@ -35,7 +35,7 @@
 
                    true
                    nil))
-               (drop 7 (html/select calendar-element [:.days :span]))
+               (html/select calendar-element [:table :tbody :tr :td])
                (apply concat (repeatedly #(range 1 8))))))
 
 (defn- get-work-calendar-for-year [year url]
