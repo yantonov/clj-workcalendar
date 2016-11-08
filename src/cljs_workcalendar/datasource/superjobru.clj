@@ -6,7 +6,7 @@
   (:require [clj-http.client :as http]))
 
 (defn- prev-month-day? [html-element]
-  (.contains (:class (:attrs html-element)) "h_color_gray_lt"))
+  (.contains (:class (:attrs html-element)) "h_color_gray"))
 
 (defn- weekend? [html-element]
   (let [c (:class (:attrs html-element))]
@@ -57,7 +57,7 @@
   (get-work-calendar [this]
     (concat (get-work-calendar-for-year 2016
                                         "http://www.superjob.ru/proizvodstvennyj_kalendar/2016/")
-     (get-work-calendar-for-year 2015
+            (get-work-calendar-for-year 2015
                                         "http://www.superjob.ru/proizvodstvennyj_kalendar/2015/")
             (get-work-calendar-for-year 2014
                                         "http://www.superjob.ru/proizvodstvennyj_kalendar/2014/")
