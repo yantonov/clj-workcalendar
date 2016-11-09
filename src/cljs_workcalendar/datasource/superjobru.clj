@@ -62,6 +62,4 @@
             (get-work-calendar-for-year 2014
                                         "http://www.superjob.ru/proizvodstvennyj_kalendar/2014/")
             (get-work-calendar-for-year 2013
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2013/")
-            (get-work-calendar-for-year 2012
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2012/"))))
+                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2013/"))))
