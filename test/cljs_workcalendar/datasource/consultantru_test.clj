@@ -2,13 +2,12 @@
   (:require [cljs-workcalendar.workdayitem])
   (:import  [cljs_workcalendar.workdayitem WorkDayItem])
   (:require [cljs-workcalendar.datasource.consultantru :as impl])
-  (:import  [cljs_workcalendar.datasource.consultantru ConsultantRuWorkCalendarSource])
   (:require [clojure.test :refer :all])
   (:require [cljs-workcalendar.datasource.calendar-test-data :as test-data])
   (:require [cljs-workcalendar.datasource.source-test-util :as util]))
 
 (defn- special-days-for-year [year]
-  (util/special-days-for-year year (ConsultantRuWorkCalendarSource.)))
+  (util/special-days-for-year year (impl/create-source)))
 
 (deftest calendar-2016
   (is (= (test-data/calendar-2016)

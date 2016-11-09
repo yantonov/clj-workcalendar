@@ -52,6 +52,9 @@
 
 (defrecord SuperjobRuWorkCalendarSource [])
 
+(defn create-source []
+  (SuperjobRuWorkCalendarSource.))
+
 (extend-protocol source/WorkCalendarSource
   SuperjobRuWorkCalendarSource
   (get-work-calendar [this]
