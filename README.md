@@ -20,7 +20,7 @@ bin/grab-data-integration-test.sh
 ```
 
 Run functional tests (check javascript api using [phantomjs](http://phantomjs.org/download.html)
-prerequisites: [phantomjs](http://phantomjs.org/download.html) (checked at 1.9.8 version)
+prerequisites: [phantomjs](http://phantomjs.org/download.html) (checked at 2.1.1 version)
 ```bash
 bin/functional-test.sh
 ```
