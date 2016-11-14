@@ -1,6 +1,7 @@
 (ns cljs-workcalendar.app
   (:require [cljs-workcalendar.datasource.workcalendarsource :as source])
-  (:require [cljs-workcalendar.datasource.consultantru :as consultant])
+  (:require [cljs-workcalendar.datasource.consultantru :as cns])
+  (:require [cljs-workcalendar.datasource.superjobru :as sj])
   (:require [cljs-workcalendar.format.formatinterface :as fmt])
   (:require [cljs-workcalendar.format.plaintextformatter])
   (:require [cljs-workcalendar.format.cljsformatter])
@@ -21,7 +22,9 @@
                                     (:year item)
                                     (:month item)
                                     (:day item)))
-                          (source/get-work-calendar (consultant/create-source)))]
+                          (distinct
+                           (concat (source/get-work-calendar (cns/create-source))
+                                   (source/get-work-calendar (sj/create-source)))))]
     (do
       (serialize-calendar calendar
                           (PlainTextWorkCalendarFormatter.)
