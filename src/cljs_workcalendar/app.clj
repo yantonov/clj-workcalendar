@@ -5,8 +5,8 @@
   (:require [cljs-workcalendar.format.formatinterface :as fmt])
   (:require [cljs-workcalendar.format.plaintextformatter])
   (:require [cljs-workcalendar.format.cljsformatter])
-  (:import [cljs_workcalendar.format.plaintextformatter PlainTextWorkCalendarFormatter])
-  (:import [cljs_workcalendar.format.cljsformatter ClojureScriptWorkCalendarFormatter])
+  (:require [cljs-workcalendar.format.plaintextformatter :as ptf])
+  (:require [cljs-workcalendar.format.cljsformatter :as cljf])
   (:require [clojure.java.io :as io]))
 
 (defn- serialize-calendar [work-calendar formatter file-name]
@@ -27,8 +27,8 @@
                                    (source/get-work-calendar (sj/create-source)))))]
     (do
       (serialize-calendar calendar
-                          (PlainTextWorkCalendarFormatter.)
+                          (ptf/create)
                           "deploy/data/work-calendar.txt")
       (serialize-calendar calendar
-                          (ClojureScriptWorkCalendarFormatter.)
+                          (cljf/create)
                           "src-cljs/cljs_workcalendar/calendar_data.cljs"))))

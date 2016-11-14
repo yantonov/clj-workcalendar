@@ -18,3 +18,6 @@
                     (:type item)))
           work-calendar)
      ["])"])))
+
+(defn create []
+  (ClojureScriptWorkCalendarFormatter.))

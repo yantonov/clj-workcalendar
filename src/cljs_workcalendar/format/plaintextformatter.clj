@@ -13,3 +13,6 @@
                    (let [t (:type item)]
                      (if (= t :holiday) 0 1))))
          work-calendar)))
+
+(defn create []
+  (PlainTextWorkCalendarFormatter.))
