@@ -25,10 +25,9 @@
                           (distinct
                            (concat (source/get-work-calendar (cns/create-source))
                                    (source/get-work-calendar (sj/create-source)))))]
-    (do
-      (serialize-calendar calendar
-                          (ptf/create)
-                          "deploy/data/work-calendar.txt")
-      (serialize-calendar calendar
-                          (cljf/create)
-                          "src-cljs/cljs_workcalendar/calendar_data.cljs"))))
+    (serialize-calendar calendar
+                        (ptf/create)
+                        "deploy/data/work-calendar.txt")
+    (serialize-calendar calendar
+                        (cljf/create)
+                        "src-cljs/cljs_workcalendar/calendar_data.cljs")))

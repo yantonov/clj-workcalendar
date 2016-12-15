@@ -20,26 +20,27 @@
   (Integer/parseInt (.trim (first (:content html-element)))))
 
 (defn- extract-non-working-days [calendar-element year month]
-  (filter #(not (nil? %))
-          (map (fn [day-element day-of-week]
-                 (cond
-                   (day-placeholder? day-element)
-                   nil
+  (remove
+   nil?
+   (map (fn [day-element day-of-week]
+          (cond
+            (day-placeholder? day-element)
+            nil
 
-                   (and (>= day-of-week 1)
-                        (<= day-of-week 5)
-                        (weekend? day-element))
-                   (WorkDayItem. year month (day day-element) :holiday)
+            (and (>= day-of-week 1)
+                 (<= day-of-week 5)
+                 (weekend? day-element))
+            (WorkDayItem. year month (day day-element) :holiday)
 
-                   (and (>= day-of-week 6)
-                        (<= day-of-week 7)
-                        (not (weekend? day-element)))
-                   (WorkDayItem. year month (day day-element) :workday)
+            (and (>= day-of-week 6)
+                 (<= day-of-week 7)
+                 (not (weekend? day-element)))
+            (WorkDayItem. year month (day day-element) :workday)
 
-                   true
-                   nil))
-               (html/select calendar-element [:table :tbody :tr :td])
-               (apply concat (repeatedly #(range 1 8))))))
+            true
+            nil))
+        (html/select calendar-element [:table :tbody :tr :td])
+        (apply concat (repeatedly #(range 1 8))))))
 
 (defn- get-work-calendar-for-year [year url]
   (let [rawPage (try
@@ -47,10 +48,10 @@
                   (catch Exception e ""))
         page (html/html-resource (java.io.StringReader. rawPage))
         month-calendars (html/select page [:.month-block])]
-    (apply concat (map (fn [calendar month-index]
-                         (extract-non-working-days calendar year month-index))
-                       month-calendars
-                       (iterate inc 1)))))
+    (mapcat (fn [calendar month-index]
+              (extract-non-working-days calendar year month-index))
+            month-calendars
+            (iterate inc 1))))
 
 (extend-protocol source/WorkCalendarSource
   ConsultantRuWorkCalendarSource
