@@ -73,6 +73,8 @@
   SuperjobRuWorkCalendarSource
   (get-work-calendar [this]
     (concat
+     (get-work-calendar-for-year 2017
+                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2017/")
      (get-work-calendar-for-year 2016
                                  "http://www.superjob.ru/proizvodstvennyj_kalendar/2016/")
      (get-work-calendar-for-year 2015

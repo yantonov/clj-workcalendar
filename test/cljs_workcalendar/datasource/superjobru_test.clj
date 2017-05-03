@@ -9,6 +9,10 @@
 (defn- special-days-for-year [year]
   (util/special-days-for-year year (impl/create-source)))
 
+(deftest calendar-2017
+  (is (= (test-data/calendar-2017)
+         (special-days-for-year 2017))))
+
 (deftest calendar-2016
   (is (= (test-data/calendar-2016)
          (special-days-for-year 2016))))

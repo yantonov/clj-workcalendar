@@ -1,6 +1,21 @@
 (ns cljs-workcalendar.datasource.calendar-test-data
   (:require  [clojure.test :refer :all]))
 
+(defn calendar-2017 []
+  [[1 2  :holiday]
+   [1 3  :holiday]
+   [1 4  :holiday]
+   [1 5  :holiday]
+   [1 6  :holiday]
+   [2 23 :holiday]
+   [2 24 :holiday]
+   [3 8  :holiday]
+   [5 1  :holiday]
+   [5 8  :holiday]
+   [5 9  :holiday]
+   [6 12  :holiday]
+   [11 6 :holiday]])
+
 (defn calendar-2016 []
   [[1 1  :holiday]
    [1 4  :holiday]
