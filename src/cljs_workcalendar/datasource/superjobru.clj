@@ -13,6 +13,9 @@
 (defn- prev-month-day? [html-element]
   (class-contains? html-element "h_color_gray"))
 
+(defn- next-month-day? [html-element]
+  (class-contains? html-element "m_outholiday"))
+
 (defn- weekend? [html-element]
   (class-contains? html-element "MonthsList_holiday"))
 
@@ -30,6 +33,9 @@
    (map (fn [day-element day-of-week]
           (cond
             (prev-month-day? day-element)
+            nil
+
+            (next-month-day? day-element)
             nil
 
             (and (>= day-of-week 1)
