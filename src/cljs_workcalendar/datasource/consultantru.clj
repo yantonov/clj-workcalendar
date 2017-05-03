@@ -56,16 +56,7 @@
 (extend-protocol source/WorkCalendarSource
   ConsultantRuWorkCalendarSource
   (get-work-calendar [this]
-    (concat
-     (get-work-calendar-for-year 2017
-                                 "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2017")
-     (get-work-calendar-for-year 2016
-                                 "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2016")
-     (get-work-calendar-for-year 2015
-                                 "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2015/")
-     (get-work-calendar-for-year 2014
-                                 "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2014/")
-     (get-work-calendar-for-year 2013
-                                 "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2013/")
-     (get-work-calendar-for-year 2012
-                                 "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2012/"))))
+    (mapcat
+     #(get-work-calendar-for-year %
+                                  (str "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/" %))
+     (range 2012 2019))))

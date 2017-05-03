@@ -72,12 +72,7 @@
 (extend-protocol source/WorkCalendarSource
   SuperjobRuWorkCalendarSource
   (get-work-calendar [this]
-    (concat
-     (get-work-calendar-for-year 2017
-                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2017/")
-     (get-work-calendar-for-year 2016
-                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2016/")
-     (get-work-calendar-for-year 2015
-                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2015/")
-     (get-work-calendar-for-year 2014
-                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2014/"))))
+    (mapcat
+     #(get-work-calendar-for-year %
+                                  (str "http://www.superjob.ru/proizvodstvennyj_kalendar/" % "/"))
+     (range 2014 2019))))
