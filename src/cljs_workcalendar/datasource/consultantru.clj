@@ -57,7 +57,7 @@
   ConsultantRuWorkCalendarSource
   (get-work-calendar [this]
     (concat (get-work-calendar-for-year 2016
-                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/")
+                                        "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2016")
             (get-work-calendar-for-year 2015
                                         "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/2015/")
             (get-work-calendar-for-year 2014
