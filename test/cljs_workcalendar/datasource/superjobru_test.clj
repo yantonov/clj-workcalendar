@@ -20,7 +20,3 @@
 (deftest calendar-2014
   (is (= (test-data/calendar-2014)
          (special-days-for-year 2014))))
-
-(deftest calendar-2013
-  (is (= (test-data/calendar-2013)
-         (special-days-for-year 2013))))

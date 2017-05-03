@@ -5,16 +5,24 @@
   (:require [net.cgrand.enlive-html :as html])
   (:require [clj-http.client :as http]))
 
-(defn- prev-month-day? [html-element]
-  (.contains (:class (:attrs html-element)) "h_color_gray"))
-
-(defn- weekend? [html-element]
+(defn- class-contains? [html-element class-name]
   (let [c (:class (:attrs html-element))]
     (and (not (nil? c))
-         (.contains c "MonthsList_holiday"))))
+         (.contains c class-name))))
 
-(defn- day [html-element]
-  (Integer/parseInt (first (:content html-element))))
+(defn- prev-month-day? [html-element]
+  (class-contains? html-element "h_color_gray"))
+
+(defn- weekend? [html-element]
+  (class-contains? html-element "MonthsList_holiday"))
+
+(defn- day [day-element]
+  (-> day-element
+      (html/select [:.MonthsList_day])
+      (first)
+      (:content)
+      (first)
+      (Integer/parseInt)))
 
 (defn- extract-non-working-days [calendar-element year month]
   (remove
@@ -58,11 +66,10 @@
 (extend-protocol source/WorkCalendarSource
   SuperjobRuWorkCalendarSource
   (get-work-calendar [this]
-    (concat (get-work-calendar-for-year 2016
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2016/")
-            (get-work-calendar-for-year 2015
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2015/")
-            (get-work-calendar-for-year 2014
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2014/")
-            (get-work-calendar-for-year 2013
-                                        "http://www.superjob.ru/proizvodstvennyj_kalendar/2013/"))))
+    (concat
+     (get-work-calendar-for-year 2016
+                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2016/")
+     (get-work-calendar-for-year 2015
+                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2015/")
+     (get-work-calendar-for-year 2014
+                                 "http://www.superjob.ru/proizvodstvennyj_kalendar/2014/"))))
