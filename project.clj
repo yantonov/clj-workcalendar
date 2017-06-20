@@ -6,9 +6,9 @@
 
   :dependencies
   [[org.clojure/clojure "1.8.0"]
-   [clj-http "3.5.0"]
+   [clj-http "3.6.1"]
    [enlive "1.1.6"]
-   [org.clojure/clojurescript "1.9.521"]]
+   [org.clojure/clojurescript "1.9.562"]]
 
   :main cljs-workcalendar.app
 
