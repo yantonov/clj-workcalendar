@@ -2,21 +2,39 @@
   (:require [clj-workcalendar.calendar-data :as data]))
 
 (defn- date2vec [date]
-  (vector (.getFullYear date)
-          (inc (.getMonth date))
-          (.getDate date)))
+  #?(:clj    (vector (.getYear date)
+                     (.getMonthValue date)
+                     (.getDayOfMonth date))
+     :cljs   (vector (.getFullYear date)
+                     (inc (.getMonth date))
+                     (.getDate date))))
 
 (defn- add-days [date count]
-  (js/Date. (+ (.getTime date)
-               (* 24 60 60 1000 count))))
+  #?(:clj  (. date plusDays count)
+     :cljs (js/Date. (+ (.getTime date)
+                        (* 24 60 60 1000 count)))))
 
 (defn- skip-time [date]
-  (js/Date. (.getFullYear date)
-            (.getMonth date)
-            (.getDate date)))
+  #?(:clj  (java.time.LocalDateTime/of (.getYear date)
+                                       (.getMonth date)
+                                       (.getDayOfMonth date)
+                                       0
+                                       0
+                                       0)
+     :cljs   (js/Date. (.getFullYear date)
+                       (.getMonth date)
+                       (.getDate date))))
 
 (defn- day-of-week [date]
-  (.getDay date))
+  #?(:clj    (.getDayOfWeek date)
+     :cljs   (.getDay date)))
+
+(defn- millis [date]
+  #?(:clj (-> date
+              (.atZone (java.time.ZoneId/systemDefault))
+              (.toInstant)
+              (.toEpochMilli))
+     :cljs (.getTime date)))
 
 (def work-calendar-map
   ;; create map from [y m d] -> day type (:holiday :workday)
@@ -27,8 +45,10 @@
 
 (defn ^:export is-weekend [date]
   (let [day (day-of-week date)]
-    (or (= day 0)
-        (= day 6))))
+    #?(:clj (or (= day java.time.DayOfWeek/SATURDAY)
+                (= day java.time.DayOfWeek/SUNDAY))
+       :cljs (or (= day 0)
+                 (= day 6)))))
 
 (defn ^:export is-special-working-day [date]
   (= :workday (get work-calendar-map (date2vec date) :not-found)))
@@ -69,12 +89,13 @@
                      (iterate #(add-days % direction) date)))))))
 
 (defn ^:export work-day-count [start-date end-date]
-  (if (> (.getTime start-date)
-         (.getTime end-date))
-    (throw (js/Error "invalid period"))
+  (if (> (millis start-date)
+         (millis end-date))
+    #?(:clj (throw (new RuntimeException "invalid period"))
+       :cljs (throw (js/Error "invalid period")))
     (let [from (skip-time start-date)
-          to (.getTime (skip-time end-date))]
+          to (millis (skip-time end-date))]
       (count
        (filter is-workday
-               (take-while #(<= (.getTime %) to)
+               (take-while #(<= (millis %) to)
                            (iterate (fn [d] (add-days d 1)) from)))))))

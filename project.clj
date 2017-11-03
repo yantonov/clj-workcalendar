@@ -12,8 +12,8 @@
 
   :main clj-workcalendar.app
 
-  :source-paths ["src-gen"]
-  :test-paths ["test-gen"]
+  :source-paths ["src" "src-gen"]
+  :test-paths ["test" "test-gen"]
 
   :plugins
   [[lein-cljsbuild "1.1.2"]]
