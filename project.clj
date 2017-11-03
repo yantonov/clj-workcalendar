@@ -8,7 +8,7 @@
   [[org.clojure/clojure "1.8.0"]
    [clj-http "3.7.0"]
    [enlive "1.1.6"]
-   [org.clojure/clojurescript "1.9.562"]]
+   [org.clojure/clojurescript "1.9.946"]]
 
   :main cljs-workcalendar.app
 
