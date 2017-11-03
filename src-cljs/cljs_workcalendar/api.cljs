@@ -63,12 +63,11 @@
           (nil? count))
     (throw (js/Error. "number of days is equal to zero"))
     (let [n (Math/abs count)
-          direction (if (> count 0) false true)
-          direction-int (if (> count 0) 1 -1)]
+          direction (if (> count 0) 1 -1)]
       (first
        (drop n
              (filter (fn [d] (is-workday d))
-                     (iterate (fn [d] (add-days d direction-int)) date)))))))
+                     (iterate (fn [d] (add-days d direction)) date)))))))
 
 (defn ^:export work-day-count [start-date end-date]
   (if (> (.getTime start-date)
