@@ -1,12 +1,12 @@
-(ns cljs-workcalendar.format.cljsformatter
-  (:require [cljs-workcalendar.format.formatinterface :as f])
+(ns clj-workcalendar.format.cljsformatter
+  (:require [clj-workcalendar.format.formatinterface :as f])
   (:require [clojure.java.io :as io]))
 
 (defrecord ClojureScriptWorkCalendarFormatter []
   f/ICanFormatWorkCalendar
   (format-work-calendar [this work-calendar]
     (concat
-     ["(ns cljs-workcalendar.calendar-data)"
+     ["(ns clj-workcalendar.calendar-data)"
       ""
       "(def work-calendar"
       "["]

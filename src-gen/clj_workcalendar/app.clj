@@ -1,12 +1,12 @@
-(ns cljs-workcalendar.app
-  (:require [cljs-workcalendar.datasource.workcalendarsource :as source])
-  (:require [cljs-workcalendar.datasource.consultantru :as cns])
-  (:require [cljs-workcalendar.datasource.superjobru :as sj])
-  (:require [cljs-workcalendar.format.formatinterface :as fmt])
-  (:require [cljs-workcalendar.format.plaintextformatter])
-  (:require [cljs-workcalendar.format.cljsformatter])
-  (:require [cljs-workcalendar.format.plaintextformatter :as ptf])
-  (:require [cljs-workcalendar.format.cljsformatter :as cljf])
+(ns clj-workcalendar.app
+  (:require [clj-workcalendar.datasource.workcalendarsource :as source])
+  (:require [clj-workcalendar.datasource.consultantru :as cns])
+  (:require [clj-workcalendar.datasource.superjobru :as sj])
+  (:require [clj-workcalendar.format.formatinterface :as fmt])
+  (:require [clj-workcalendar.format.plaintextformatter])
+  (:require [clj-workcalendar.format.cljsformatter])
+  (:require [clj-workcalendar.format.plaintextformatter :as ptf])
+  (:require [clj-workcalendar.format.cljsformatter :as cljf])
   (:require [clojure.java.io :as io]))
 
 (defn- serialize-calendar [work-calendar formatter file-name]
@@ -30,4 +30,4 @@
                         "deploy/data/work-calendar.txt")
     (serialize-calendar calendar
                         (cljf/create)
-                        "src-cljs/cljs_workcalendar/calendar_data.cljs")))
+                        "src/clj_workcalendar/calendar_data.cljs")))

@@ -1,5 +1,5 @@
-(ns cljs-workcalendar.format.plaintextformatter
-  (:require [cljs-workcalendar.format.formatinterface :as f])
+(ns clj-workcalendar.format.plaintextformatter
+  (:require [clj-workcalendar.format.formatinterface :as f])
   (:require [clojure.java.io :as io]))
 
 (defrecord PlainTextWorkCalendarFormatter []

@@ -1,4 +1,4 @@
-(ns cljs-workcalendar.calendar-data)
+(ns clj-workcalendar.calendar-data)
 
 (def work-calendar
 [

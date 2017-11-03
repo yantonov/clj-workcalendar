@@ -1,3 +1,3 @@
-(ns cljs-workcalendar.workdayitem)
+(ns clj-workcalendar.workdayitem)
 
 (defrecord WorkDayItem [year month day type])

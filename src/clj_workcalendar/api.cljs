@@ -1,5 +1,5 @@
-(ns cljs-workcalendar.api
-  (:require [cljs-workcalendar.calendar-data :as data]))
+(ns clj-workcalendar.api
+  (:require [clj-workcalendar.calendar-data :as data]))
 
 (defn- date2vec [date]
   (vector (.getFullYear date)

@@ -1,6 +1,6 @@
-(ns cljs-workcalendar.api-test
+(ns clj-workcalendar.api-test
   (:require [cljs.test :refer-macros [deftest testing is are]]
-            [cljs-workcalendar.api :as cs]))
+            [clj-workcalendar.api :as cs]))
 
 (deftest is-workday-test
   (are [year month day workday?]

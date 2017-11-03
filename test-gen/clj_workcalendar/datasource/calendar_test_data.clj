@@ -1,4 +1,4 @@
-(ns cljs-workcalendar.datasource.calendar-test-data
+(ns clj-workcalendar.datasource.calendar-test-data
   (:require  [clojure.test :refer :all]))
 
 (defn calendar-2018 []

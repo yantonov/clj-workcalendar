@@ -10,7 +10,10 @@
    [enlive "1.1.6"]
    [org.clojure/clojurescript "1.9.946"]]
 
-  :main cljs-workcalendar.app
+  :main clj-workcalendar.app
+
+  :source-paths ["src-gen"]
+  :test-paths ["test-gen"]
 
   :plugins
   [[lein-cljsbuild "1.1.2"]]
@@ -18,7 +21,7 @@
   :cljsbuild
   {:builds
    {:production
-    {:source-paths ["src-cljs"]
+    {:source-paths ["src"]
      :compiler
      {:output-to "target/work-calendar.js"
       :source-map "target/work-calendar.js.map"
@@ -27,7 +30,7 @@
       :parallel-build true}}
 
     :unittest
-    {:source-paths ["src-cljs" "test-cljs"]
+    {:source-paths ["src" "test"]
      :compiler
      {:output-to "target/testable-work-calendar.js"
       :optimizations :whitespace

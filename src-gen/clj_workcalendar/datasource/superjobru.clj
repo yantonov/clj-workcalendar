@@ -1,7 +1,7 @@
-(ns cljs-workcalendar.datasource.superjobru
-  (:require [cljs-workcalendar.workdayitem])
-  (:import  [cljs_workcalendar.workdayitem WorkDayItem])
-  (:require [cljs-workcalendar.datasource.workcalendarsource :as source])
+(ns clj-workcalendar.datasource.superjobru
+  (:require [clj-workcalendar.workdayitem])
+  (:import  [clj_workcalendar.workdayitem WorkDayItem])
+  (:require [clj-workcalendar.datasource.workcalendarsource :as source])
   (:require [net.cgrand.enlive-html :as html])
   (:require [clj-http.client :as http]))
 

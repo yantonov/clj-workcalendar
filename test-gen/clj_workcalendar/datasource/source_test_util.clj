@@ -1,5 +1,5 @@
-(ns cljs-workcalendar.datasource.source-test-util
-  (:require [cljs-workcalendar.datasource.workcalendarsource :as source]))
+(ns clj-workcalendar.datasource.source-test-util
+  (:require [clj-workcalendar.datasource.workcalendarsource :as source]))
 
 (defn special-days-for-year [year datasource]
   (let [all-items (source/get-work-calendar datasource)]
