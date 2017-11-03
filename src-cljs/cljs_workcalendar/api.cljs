@@ -61,7 +61,7 @@
 (defn ^:export add-work-days [date count]
   (if (or (zero? count)
           (nil? count))
-    (throw (js/Error. "number of days is equal to zero"))
+    date
     (let [n (Math/abs count)
           direction (if (> count 0) 1 -1)]
       (first
