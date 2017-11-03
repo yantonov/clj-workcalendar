@@ -47,7 +47,7 @@
                   (:body (http/get url))
                   (catch Exception e ""))
         page (html/html-resource (java.io.StringReader. rawPage))
-        month-calendars (html/select page [:.month-block])]
+        month-calendars (html/select page [:.cal])]
     (mapcat (fn [calendar month-index]
               (extract-non-working-days calendar year month-index))
             month-calendars
