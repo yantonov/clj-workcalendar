@@ -6,7 +6,7 @@
 
   :dependencies
   [[org.clojure/clojure "1.8.0"]
-   [clj-http "3.6.1"]
+   [clj-http "3.7.0"]
    [enlive "1.1.6"]
    [org.clojure/clojurescript "1.9.562"]]
 
