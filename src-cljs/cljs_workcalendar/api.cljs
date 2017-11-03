@@ -48,9 +48,8 @@
 (defn ^:export get-nearest-workday [date move-backwards]
   (let [direction (if move-backwards -1 1)]
     (first
-     (filter (fn [d]
-               (is-workday d))
-             (iterate (fn [d] (add-days d direction)) date)))))
+     (filter is-workday
+             (iterate #(add-days % direction) date)))))
 
 (defn ^:export move-to-workday [date]
   (get-nearest-workday date false))
@@ -66,8 +65,8 @@
           direction (if (> count 0) 1 -1)]
       (first
        (drop n
-             (filter (fn [d] (is-workday d))
-                     (iterate (fn [d] (add-days d direction)) date)))))))
+             (filter is-workday
+                     (iterate #(add-days % direction) date)))))))
 
 (defn ^:export work-day-count [start-date end-date]
   (if (> (.getTime start-date)
@@ -76,7 +75,6 @@
     (let [from (skip-time start-date)
           to (.getTime (skip-time end-date))]
       (count
-       (filter (fn [d] (is-workday d))
-               (take-while (fn [d] (<= (.getTime d)
-                                       to))
+       (filter is-workday
+               (take-while #(<= (.getTime %) to)
                            (iterate (fn [d] (add-days d 1)) from)))))))
