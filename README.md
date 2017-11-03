@@ -1,6 +1,6 @@
-# cljs-workcalendar
+# clj-workcalendar
 
-A Clojure tiny library designed to simplify manupilations with dates (in the sense of [working calendar](http://www.superjob.ru/proizvodstvennyj_kalendar/)) from javascript code.
+A Clojure/ClojureScript tiny library designed to simplify manupilations with dates (in the sense of [working calendar](http://www.superjob.ru/proizvodstvennyj_kalendar/)) from javascript code.
 
 ## Usage
 
@@ -16,7 +16,8 @@ bin/generate-js.sh
 ## CI
 Run unit tests (check collect work calendar data from external sites)
 ```bash
-bin/grab-data-integration-test.sh
+bin/test.sh
+bin/cljs-test.sh
 ```
 
 Run functional tests (check javascript api using [phantomjs](http://phantomjs.org/download.html)
@@ -27,7 +28,7 @@ bin/functional-test.sh
 
 ## License
 
-Copyright © 2015 FIXME
+Copyright © 2017 FIXME
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
