@@ -30,4 +30,4 @@
                         "deploy/data/work-calendar.txt")
     (serialize-calendar calendar
                         (cljf/create)
-                        "src/clj_workcalendar/calendar_data.cljs")))
+                        "src/clj_workcalendar/calendar_data.cljc")))
