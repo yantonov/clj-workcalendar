@@ -17,13 +17,13 @@ bin/generate-js.sh
 Run unit tests (check collect work calendar data from external sites)
 ```bash
 bin/test.sh
-bin/cljs-test.sh
+
 ```
 
 Run functional tests (check javascript api using [phantomjs](http://phantomjs.org/download.html)
 prerequisites: [phantomjs](http://phantomjs.org/download.html) (checked at 2.1.1 version)
 ```bash
-bin/functional-test.sh
+bin/cljs-test.sh
 ```
 
 ## License
