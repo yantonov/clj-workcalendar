@@ -59,4 +59,4 @@
     (mapcat
      #(get-work-calendar-for-year %
                                   (str "http://www.consultant.ru/law/ref/calendar/proizvodstvennye/" %))
-     (range 2012 2019))))
+     (range 2012 2024))))

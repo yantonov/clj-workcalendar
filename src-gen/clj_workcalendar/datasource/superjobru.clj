@@ -75,4 +75,4 @@
     (mapcat
      #(get-work-calendar-for-year %
                                   (str "http://www.superjob.ru/proizvodstvennyj_kalendar/" % "/"))
-     (range 2014 2019))))
+     (range 2014 2024))))
