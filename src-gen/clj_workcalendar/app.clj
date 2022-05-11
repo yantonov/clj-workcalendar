@@ -1,7 +1,6 @@
 (ns clj-workcalendar.app
   (:require [clj-workcalendar.datasource.workcalendarsource :as source])
   (:require [clj-workcalendar.datasource.consultantru :as cns])
-  (:require [clj-workcalendar.datasource.superjobru :as sj])
   (:require [clj-workcalendar.format.formatinterface :as fmt])
   (:require [clj-workcalendar.format.plaintextformatter])
   (:require [clj-workcalendar.format.cljsformatter])
@@ -23,8 +22,7 @@
                                     (:month item)
                                     (:day item)))
                           (distinct
-                           (concat (source/get-work-calendar (cns/create-source))
-                                   (source/get-work-calendar (sj/create-source)))))]
+                           (concat (source/get-work-calendar (cns/create-source)))))]
     (serialize-calendar calendar
                         (ptf/create)
                         "deploy/data/work-calendar.txt")
